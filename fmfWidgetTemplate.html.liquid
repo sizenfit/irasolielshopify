@@ -1,0 +1,27 @@
+
+<div id="w-{{vm.widgetData.productCode}}">
+    <div ng-if="vm.widgetData.widget.widgetDisplayStatus==1 || vm.widgetData.widget.widgetDisplayStatus==2">
+    </div>
+    <div ng-if="vm.widgetData.widget.widgetDisplayStatus==3">
+        <a ng-click="vm.sizechart()" style="text-decoration: none">
+          <span class="snf5342-template">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Calculate My Size</u></span>
+        </a>
+    </div>
+    <div ng-if="vm.widgetData.widget.widgetDisplayStatus==5 || vm.widgetData.widget.widgetDisplayStatus==4">
+            <a ng-click="vm.sizechart()" style="text-decoration: none">
+                <div class="snf5342-template">
+                    <span style="text-transform: capitalize;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Size Chart&nbsp;-&nbsp;<span style="text-transform: lowercase;"><p style="display: table-cell;">{{vm.widgetData.user.profileName}},</p></span>
+                    <span>Size&nbsp;{{vm.widgetData.widget.bestFit.size}}&nbsp;</span>
+                    <span ng-if="vm.widgetData.widget.bestFit.ratingScore >= 3.5">
+                      <img src="https://cdn.shopify.com/s/files/1/0916/8670/t/24/assets/Tick_in_Green.svg"></i>
+                    </span>
+                    <span ng-if="vm.widgetData.widget.bestFit.ratingScore < 3.5 &&                 vm.widgetData.widget.bestFit.ratingScore >= 1.5">
+                       <img src="https://cdn.shopify.com/s/files/1/0916/8670/t/24/assets/Tick_in_Orange.svg"></img>
+                    </span>
+                    <span ng-if="vm.widgetData.widget.bestFit.ratingScore < 1.5">
+                       <img src="https://cdn.shopify.com/s/files/1/0916/8670/t/24/assets/Tick_in_Grey.svg"></img>
+                    </span>                  
+                </div>
+            </a>
+    </div>
+</div>
