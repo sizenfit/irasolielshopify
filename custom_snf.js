@@ -1803,3 +1803,4 @@ var BrandProfile = document.getElementById('snf5342-widget-form-control-brnad'),
         }, 500);
     }
 }
+ 
