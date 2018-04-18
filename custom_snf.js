@@ -60,9 +60,8 @@
             o = function() {
                 function e(t) {
                     var i = this;
-                    s(this, e), this.config = e.mergeSettings(t), this.selector = "string" == typeof this.config.selector ? document.querySelector(this.config.selector) : this.config.selector, this.selectorWidth = 250, this.innerElements = [].slice.call(this.selector.children), this.currentSlide = this.config.startIndex, this.transformProperty = e.webkitOrNot(), ["resizeHandler", "touchstartHandler", "touchendHandler", "touchmoveHandler", "mousedownHandler", "mouseupHandler", "mouseleaveHandler", "mousemoveHandler"].forEach(function(e) {
-                       
-                      i[e] = i[e].bind(i)                      
+                    s(this, e), this.config = e.mergeSettings(t), this.selector = "string" == typeof this.config.selector ? document.querySelector(this.config.selector) : this.config.selector, this.selectorWidth = this.selector.offsetWidth, this.innerElements = [].slice.call(this.selector.children), this.currentSlide = this.config.startIndex, this.transformProperty = e.webkitOrNot(), ["resizeHandler", "touchstartHandler", "touchendHandler", "touchmoveHandler", "mousedownHandler", "mouseupHandler", "mouseleaveHandler", "mousemoveHandler"].forEach(function(e) {
+                        i[e] = i[e].bind(i)
                     }), this.init()
                 }
                 return n(e, [{
@@ -77,7 +76,7 @@
                                 passive: !0
                             }), this.selector.addEventListener("touchend", this.touchendHandler), this.selector.addEventListener("touchmove", this.touchmoveHandler, {
                                 passive: !0
-                            }), this.selector.addEventListener("mousedown", this.mousedownHandler), this.selector.addEventListener("mouseup", this.mouseupHandler), this.selector.addEventListener("mouseleave", this.mouseleaveHandler), this.selector.addEventListener("mousemove", this.mousemoveHandler)), null === this.selector) throw new Error("Something wrong with your selector 😭");
+                            }), this.selector.addEventListener("mousedown", this.mousedownHandler), this.selector.addEventListener("mouseup", this.mouseupHandler), this.selector.addEventListener("mouseleave", this.mouseleaveHandler), this.selector.addEventListener("mousemove", this.mousemoveHandler)), null === this.selector) throw new Error("Something wrong with your selector ðŸ˜­");
                         this.resolveSlidesNumber(), this.selector.style.overflow = "hidden", this.sliderFrame = document.createElement("div"), this.sliderFrame.style.width = this.selectorWidth / this.perPage * this.innerElements.length + "px", this.sliderFrame.style.webkitTransition = "all " + this.config.duration + "ms " + this.config.easing, this.sliderFrame.style.transition = "all " + this.config.duration + "ms " + this.config.easing, this.config.draggable && (this.selector.style.cursor = "-webkit-grab");
                         for (var e = document.createDocumentFragment(), t = 0; t < this.innerElements.length; t++) {
                             var i = document.createElement("div");
@@ -138,7 +137,6 @@
                 }, {
                     key: "resizeHandler",
                     value: function() {
-                      this.selectorWidth = 1200
                        // console.log("this.selectorWidth",this.selector.offsetWidth);
                         if(this.selector.offsetWidth == 0){
                            // console.log("chnage width");
@@ -207,14 +205,14 @@
                 }, {
                     key: "remove",
                     value: function(e, t) {
-                        if (e < 0 || e >= this.innerElements.length) throw new Error("Item to remove doesn't exist 😭");
+                        if (e < 0 || e >= this.innerElements.length) throw new Error("Item to remove doesn't exist ðŸ˜­");
                         this.innerElements.splice(e, 1), this.currentSlide = e <= this.currentSlide ? this.currentSlide - 1 : this.currentSlide, this.updateFrame(), t && t.call(this)
                     }
                 }, {
                     key: "insert",
                     value: function(e, t, i) {
-                        if (t < 0 || t > this.innerElements.length + 1) throw new Error("Unable to inset it at this index 😭");
-                        if (this.innerElements.indexOf(e) !== -1) throw new Error("The same item in a carousel? Really? Nope 😭");
+                        if (t < 0 || t > this.innerElements.length + 1) throw new Error("Unable to inset it at this index ðŸ˜­");
+                        if (this.innerElements.indexOf(e) !== -1) throw new Error("The same item in a carousel? Really? Nope ðŸ˜­");
                         this.innerElements.splice(t, 0, e), this.currentSlide = t <= this.currentSlide ? this.currentSlide + 1 : this.currentSlide, this.updateFrame(), i && i.call(this)
                     }
                 }, {
@@ -840,10 +838,9 @@ if(_.isUndefined(weight111)){
 }
 
 //For height weight slider
-var jQuery_Snf = jQuery.noConflict();
 
-var range1 = jQuery_Snf("#snf5342-widget-select-slider-kg"),
-    inputFrom1 = jQuery_Snf("#snf5342-widget-select-weight"),
+var range1 = jQuery("#snf5342-widget-select-slider-kg"),
+    inputFrom1 = jQuery("#snf5342-widget-select-weight"),
     instance1,
     min1 = document.getElementById('snf5342-widget-select-slider-kg').getAttribute('min'),
     max1 = document.getElementById('snf5342-widget-select-slider-kg').getAttribute('max'),
@@ -852,25 +849,25 @@ var range1 = jQuery_Snf("#snf5342-widget-select-slider-kg"),
 
 
 //For Height Slider in ft
-var range = jQuery_Snf("#snf5342-widget-select-slider-ft"),
-    inputFrom = jQuery_Snf("#snf5342-widget-select-height"),
-    inputTo = jQuery_Snf("#snf5342-widget-select-height-in"),
+var range = jQuery("#snf5342-widget-select-slider-ft"),
+    inputFrom = jQuery("#snf5342-widget-select-height"),
+    inputTo = jQuery("#snf5342-widget-select-height-in"),
     instance,
     min = document.getElementById('snf5342-widget-select-slider-ft').getAttribute('min'),
     max = document.getElementById('snf5342-widget-select-slider-ft').getAttribute('max'),
     value = height111;
     // from = (min+max)/2;
 
-var range3 = jQuery_Snf("#snf5342-widget-select-slider-lb"),
-    inputFrom3 = jQuery_Snf("#snf5342-widget-select-weight-lb"),
+var range3 = jQuery("#snf5342-widget-select-slider-lb"),
+    inputFrom3 = jQuery("#snf5342-widget-select-weight-lb"),
     instance3,
     min3 = document.getElementById('snf5342-widget-select-slider-lb').getAttribute('min'),
     max3 = document.getElementById('snf5342-widget-select-slider-lb').getAttribute('max'),
     value3 = document.getElementById('snf5342-widget-select-slider-lb').getAttribute('value');
 
 
-var range2 = jQuery_Snf("#snf5342-widget-select-slider-cm"),
-    inputFrom2 = jQuery_Snf("#snf5342-widget-select-height-cm"),
+var range2 = jQuery("#snf5342-widget-select-slider-cm"),
+    inputFrom2 = jQuery("#snf5342-widget-select-height-cm"),
     instance2,
     min2 = document.getElementById('snf5342-widget-select-slider-cm').getAttribute('min'),
     max2 = document.getElementById('snf5342-widget-select-slider-cm').getAttribute('max'),
@@ -1440,8 +1437,8 @@ function scrollToptry(id){
 
      console.log("in scroll try end");
         console.log("Before"+id);
-           var elem = jQuery_Snf("#"+id);
-           var e2 = jQuery_Snf("#scroll_1");
+           var elem = jQuery("#"+id);
+           var e2 = jQuery("#scroll_1");
            console.log(e2.offset().top);
            console.log(elem.offset().top);
            console.log(Math.abs(elem.offset().top - e2.offset().top));
@@ -1465,6 +1462,30 @@ function enableButton(){
                 snfAddClass(TabBtn5, 'snf5342-widget-btn-primary-filled');
 }
 
+function disableButton1(){
+    var TabBtn5 = document.getElementById('snf5342-widget-tab-result-overlay1');
+     snfRemoveClass(TabBtn5, 'snf5342-widget-btn-primary');
+     snfRemoveClass(TabBtn5, 'snf5342-widget-btn-primary-filled');
+     snfAddClass(TabBtn5, 'snf5342-widget-toggle-disabled');
+}
+function enableButton1(){
+    var TabBtn5 = document.getElementById('snf5342-widget-tab-result-overlay1');
+    snfRemoveClass(TabBtn5, 'snf5342-widget-toggle-disabled');  
+                snfAddClass(TabBtn5, 'snf5342-widget-btn-primary');
+                snfAddClass(TabBtn5, 'snf5342-widget-btn-primary-filled');
+}
+function disableButton11(){
+    var TabBtn5 = document.getElementById('snf5342-widget-tab-btn-05');
+     snfRemoveClass(TabBtn5, 'snf5342-widget-btn-primary');
+     snfRemoveClass(TabBtn5, 'snf5342-widget-btn-primary-filled');
+     snfAddClass(TabBtn5, 'snf5342-widget-toggle-disabled');
+}
+function enableButton11(){
+    var TabBtn5 = document.getElementById('snf5342-widget-tab-btn-05');
+    snfRemoveClass(TabBtn5, 'snf5342-widget-toggle-disabled');  
+                snfAddClass(TabBtn5, 'snf5342-widget-btn-primary');
+                snfAddClass(TabBtn5, 'snf5342-widget-btn-primary-filled');
+}
 
 // model-------------
 document.getElementById('snf5342-widget-wrap').onclick = function(e) {
